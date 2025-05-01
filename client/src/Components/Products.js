@@ -29,6 +29,7 @@ const Products = () => {
       };
       dispatch(addToCart(cartData));
       alert("Item added to cart.");
+      navigate("/cart");
     }
   };
 
@@ -58,7 +59,8 @@ const Products = () => {
                   <td>
                     {product.desc}
                     <br />
-                    <td>{Math.round(product.price, 2)} OMR</td>
+                    {Math.round(product.price, 2)} OMR <br />
+                    Number of stocks: {product.stocks}
                     <br />
                     <input
                       type="number"

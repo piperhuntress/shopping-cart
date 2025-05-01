@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 const Cart = () => {
   const cart = useSelector((state) => state.cart.cart);
   const user = useSelector((state) => state.users.user);
+  const [quantity, setquantity] = useState(0);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -66,8 +67,20 @@ const Cart = () => {
                     />
                   </td>
                   <td>{cart.desc}</td>
-                  <td>{Math.round(cart.price, 2)}</td>
-                  <td>{cart.quantity}</td>
+                  <td>
+                    <strong>{Math.round(cart.price, 2)}</strong>
+                  </td>
+                  <td>
+                    {cart.quantity}
+                    <input
+                      type="number"
+                      className="qty_input"
+                      required
+                      onChange={(e) => {
+                        setquantity(e.target.value);
+                      }}
+                    />
+                  </td>
 
                   <td>
                     <button
@@ -86,12 +99,12 @@ const Cart = () => {
                     </button>
                   </td>
                   <td>
-                    <button
+                    {/*                     <button
                       onClick={() => handleUpdate(cart._id)}
                       className="btn btn-primary"
                     >
                       Update
-                    </button>
+                    </button> */}
                   </td>
                 </tr>
               ))}
