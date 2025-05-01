@@ -72,16 +72,8 @@ const Cart = () => {
                   </td>
                   <td>
                     {cart.quantity}
-                    <input
-                      type="number"
-                      className="qty_input"
-                      required
-                      onChange={(e) => {
-                        setquantity(e.target.value);
-                      }}
-                    />
-                  </td>
 
+                  </td>
                   <td>
                     <button
                       onClick={() => {
@@ -97,14 +89,6 @@ const Cart = () => {
                     >
                       Delete
                     </button>
-                  </td>
-                  <td>
-                    {/*                     <button
-                      onClick={() => handleUpdate(cart._id)}
-                      className="btn btn-primary"
-                    >
-                      Update
-                    </button> */}
                   </td>
                 </tr>
               ))}
