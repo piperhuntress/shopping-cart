@@ -29,16 +29,16 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 
-//const connectString = `mongodb+srv://${ENV.DB_USER}:${ENV.DB_PASSWORD}@${ENV.DB_CLUSTER}/${ENV.DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`;
+const connectString = `mongodb+srv://${ENV.DB_USER}:${ENV.DB_PASSWORD}@${ENV.DB_CLUSTER}/${ENV.DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`;
 
 
 
-//mongoose.connect(connectString);
+mongoose.connect(connectString);
 
-mongoose.connect('mongodb://localhost:27017/shoppingcart', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// mongoose.connect('mongodb://localhost:27017/shoppingcart', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
 // Serve static files from the 'uploads' directory
 
 // Convert the URL of the current module to a file path
